@@ -31,3 +31,21 @@ body {
     text-wrap: balance;
   }
 }
+
+.mercadoLibreBgColor {
+  background: #ffe600;
+}
+
+.logo {
+  background-image: url("https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.73/mercadolibre/logo_large_25years_v2.png");
+  height: 34px;
+  width: 134px;
+  display: flex;
+  position: static;
+  background-size: contain;
+}
+
+.bg-grey {
+  --tw-bg-opacity: 1;
+  background-color: #ededed;
+}

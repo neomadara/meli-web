@@ -1,0 +1,26 @@
+.items-container {
+    width: 100%;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.freeShippingIcon {
+    width: 24px;
+    height: 24px;
+    color: green;
+}
+
+.price-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.freeShippingIcon {
+    width: 24px;
+    height: 24px;
+    color: green;
+    margin-left: 8px;
+}
