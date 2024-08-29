@@ -18,7 +18,9 @@ export default function Page() {
 
   if (isLoading) return <div className={'flex min-h-screen flex-col items-center justify-start p-16 bg-grey text-black content-center'}>Cargando resultados...</div>
 
-  if (error) return <div className={'flex min-h-screen flex-col items-center justify-start p-16 bg-grey text-black content-center'}>vuelva mas tarde...</div>
+  if (error) return <div className={'flex min-h-screen flex-col items-center justify-start p-16 bg-grey text-black content-center'}>Vuelva mas tarde...</div>
+
+  if (data.items.length === 0) return <div className={'flex min-h-screen flex-col items-center justify-start p-16 bg-grey text-black content-center'}>No se encontraron resultados</div>
 
   const handleItemClick = (id: string) => {
     router.push(`/items/${id}`);
