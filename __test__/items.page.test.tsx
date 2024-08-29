@@ -1,12 +1,13 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Page from '@/app/items/page';
-import { useRouter } from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
 import useSWR from 'swr';
 
 // Mock the useRouter hook
-jest.mock('next/router', () => ({
+jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
+  useSearchParams: jest.fn(),
 }));
 
 // Mock the useSWR hook
@@ -15,13 +16,17 @@ jest.mock('swr', () => ({
   default: jest.fn(),
 }));
 
-describe('Page', () => {
+describe('Items Page', () => {
   const mockPush = jest.fn();
   const mockUseRouter = useRouter as jest.Mock;
+  const mockUseSearchParams = useSearchParams as jest.Mock;
   const mockUseSWR = useSWR as jest.Mock;
 
   beforeEach(() => {
     mockUseRouter.mockReturnValue({ push: mockPush });
+    mockUseSearchParams.mockReturnValue({
+      get: jest.fn().mockReturnValue('searchTerm'),
+    });
   });
 
   afterEach(() => {
