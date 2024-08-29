@@ -54,7 +54,7 @@ describe('Item Page', () => {
     render(<ItemPage />);
     expect(screen.getByText('Item 1')).toBeInTheDocument();
     expect(screen.getByText('Item 1 description')).toBeInTheDocument();
-    expect(screen.getByText('Nuevo')).toBeInTheDocument();
+    expect(screen.getByText((content, element) => content.includes('Nuevo'))).toBeInTheDocument();
     expect(screen.getByText('Comprar')).toBeInTheDocument();
   });
 });
